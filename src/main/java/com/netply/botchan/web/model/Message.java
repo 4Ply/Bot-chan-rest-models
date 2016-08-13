@@ -1,7 +1,8 @@
 package com.netply.botchan.web.model;
 
 public class Message {
-    private long id;
+    private String id;
+    private String platform;
     private String message;
     private String sender;
 
@@ -10,18 +11,27 @@ public class Message {
 
     }
 
-    public Message(long id, String message) {
-        this(id, message, null);
+    public Message(String id, String platform, String message) {
+        this(id, platform, message, null);
     }
 
-    public Message(long id, String message, String sender) {
+    public Message(String id, String platform, String message, String sender) {
         this.id = id;
+        this.platform = platform;
         this.message = message;
         this.sender = sender;
     }
 
-    public long getId() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
         return id;
+    }
+
+    public String getPlatform() {
+        return platform;
     }
 
     public String getMessage() {
@@ -39,14 +49,14 @@ public class Message {
 
         Message message1 = (Message) o;
 
-        if (id != message1.id) return false;
+        if (id != null ? !id.equals(message1.id) : message1.id != null) return false;
         if (message != null ? !message.equals(message1.message) : message1.message != null) return false;
         return sender != null ? sender.equals(message1.sender) : message1.sender == null;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (sender != null ? sender.hashCode() : 0);
         return result;
@@ -55,7 +65,7 @@ public class Message {
     @Override
     public String toString() {
         return "Message{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", message='" + message + '\'' +
                 ", sender='" + sender + '\'' +
                 '}';

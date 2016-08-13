@@ -1,11 +1,14 @@
 package com.netply.botchan.web.model;
 
-public class Greeting {
-    private final long id;
-    private final String message;
+public class BasicMessageObject {
+    private long id;
+    private String message;
 
 
-    public Greeting(long id, String message) {
+    public BasicMessageObject() {
+    }
+
+    public BasicMessageObject(long id, String message) {
         this.id = id;
         this.message = message;
     }
@@ -23,10 +26,10 @@ public class Greeting {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Greeting greeting = (Greeting) o;
+        BasicMessageObject basicMessageObject = (BasicMessageObject) o;
 
-        if (id != greeting.id) return false;
-        if (message != null ? !message.equals(greeting.message) : greeting.message != null) return false;
+        if (id != basicMessageObject.id) return false;
+        if (message != null ? !message.equals(basicMessageObject.message) : basicMessageObject.message != null) return false;
         return true;
     }
 
@@ -39,7 +42,7 @@ public class Greeting {
 
     @Override
     public String toString() {
-        return "Greeting{" +
+        return "BasicMessageObject{" +
                 "id=" + id +
                 ", message='" + message + '\'' +
                 '}';
