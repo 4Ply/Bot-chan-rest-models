@@ -2,6 +2,7 @@ package com.netply.botchan.web.model;
 
 public class BasicResultResponse {
     private boolean result;
+    private Integer clientID;
     private String sessionKey;
     private String reason;
 
@@ -22,6 +23,11 @@ public class BasicResultResponse {
         reason = "Success";
     }
 
+    public BasicResultResponse(boolean result, String sessionKey, Integer clientID) {
+        this(result, sessionKey);
+        this.clientID = clientID;
+    }
+
     public boolean isResult() {
         return result;
     }
@@ -32,6 +38,10 @@ public class BasicResultResponse {
 
     public String getReason() {
         return reason;
+    }
+
+    public Integer getClientID() {
+        return clientID;
     }
 
     @Override

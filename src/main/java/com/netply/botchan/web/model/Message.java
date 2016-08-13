@@ -1,10 +1,14 @@
 package com.netply.botchan.web.model;
 
 public class Message {
-    private final long id;
-    private final String message;
-    private final String sender;
+    private long id;
+    private String message;
+    private String sender;
 
+
+    public Message() {
+
+    }
 
     public Message(long id, String message) {
         this(id, message, null);
