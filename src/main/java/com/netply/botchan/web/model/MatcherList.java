@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class MatcherList {
     private Integer id;
-    private ArrayList<String> messageMatchers;
+    private ArrayList<String> matchers;
 
 
     public MatcherList() {
 
     }
 
-    public MatcherList(Integer id, ArrayList<String> messageMatchers) {
+    public MatcherList(Integer id, ArrayList<String> matchers) {
         this.id = id;
-        this.messageMatchers = messageMatchers;
+        this.matchers = matchers;
     }
 
     public Integer getId() {
@@ -24,12 +24,12 @@ public class MatcherList {
         this.id = id;
     }
 
-    public void setMessageMatchers(ArrayList<String> messageMatchers) {
-        this.messageMatchers = messageMatchers;
+    public void setMatchers(ArrayList<String> matchers) {
+        this.matchers = matchers;
     }
 
-    public ArrayList<String> getMessageMatchers() {
-        return messageMatchers;
+    public ArrayList<String> getMatchers() {
+        return matchers;
     }
 
     @Override
@@ -40,13 +40,13 @@ public class MatcherList {
         MatcherList that = (MatcherList) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        return messageMatchers != null ? messageMatchers.equals(that.messageMatchers) : that.messageMatchers == null;
+        return matchers != null ? matchers.equals(that.matchers) : that.matchers == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (messageMatchers != null ? messageMatchers.hashCode() : 0);
+        result = 31 * result + (matchers != null ? matchers.hashCode() : 0);
         return result;
     }
 
@@ -54,7 +54,7 @@ public class MatcherList {
     public String toString() {
         return "MatcherList{" +
                 "id=" + id +
-                ", messageMatchers=" + messageMatchers +
+                ", matchers=" + matchers +
                 '}';
     }
 }
