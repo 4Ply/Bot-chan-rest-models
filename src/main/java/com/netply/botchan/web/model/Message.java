@@ -50,6 +50,7 @@ public class Message {
         Message message1 = (Message) o;
 
         if (id != null ? !id.equals(message1.id) : message1.id != null) return false;
+        if (platform != null ? !platform.equals(message1.platform) : message1.platform != null) return false;
         if (message != null ? !message.equals(message1.message) : message1.message != null) return false;
         return sender != null ? sender.equals(message1.sender) : message1.sender == null;
     }
@@ -57,6 +58,7 @@ public class Message {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (platform != null ? platform.hashCode() : 0);
         result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (sender != null ? sender.hashCode() : 0);
         return result;
@@ -66,6 +68,7 @@ public class Message {
     public String toString() {
         return "Message{" +
                 "id='" + id + '\'' +
+                ", platform='" + platform + '\'' +
                 ", message='" + message + '\'' +
                 ", sender='" + sender + '\'' +
                 '}';
