@@ -3,7 +3,6 @@ package com.netply.botchan.web.model;
 public class Reply {
     private String id;
     private String target;
-    private String platform;
     private String message;
 
 
@@ -11,8 +10,7 @@ public class Reply {
 
     }
 
-    public Reply(String platform, String target, String message) {
-        this.platform = platform;
+    public Reply(String target, String message) {
         this.message = message;
         this.target = target;
     }
@@ -23,10 +21,6 @@ public class Reply {
 
     public String getId() {
         return id;
-    }
-
-    public String getPlatform() {
-        return platform;
     }
 
     public String getTarget() {
@@ -46,7 +40,6 @@ public class Reply {
 
         if (id != null ? !id.equals(reply.id) : reply.id != null) return false;
         if (target != null ? !target.equals(reply.target) : reply.target != null) return false;
-        if (platform != null ? !platform.equals(reply.platform) : reply.platform != null) return false;
         return message != null ? message.equals(reply.message) : reply.message == null;
     }
 
@@ -54,7 +47,6 @@ public class Reply {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (target != null ? target.hashCode() : 0);
-        result = 31 * result + (platform != null ? platform.hashCode() : 0);
         result = 31 * result + (message != null ? message.hashCode() : 0);
         return result;
     }
@@ -64,7 +56,6 @@ public class Reply {
         return "Reply{" +
                 "id='" + id + '\'' +
                 ", target='" + target + '\'' +
-                ", platform='" + platform + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
