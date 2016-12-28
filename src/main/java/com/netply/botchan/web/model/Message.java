@@ -32,6 +32,10 @@ public class Message {
         return message;
     }
 
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
     public String getSender() {
         return sender;
     }
