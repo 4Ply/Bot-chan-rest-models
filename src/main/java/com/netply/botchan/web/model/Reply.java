@@ -23,6 +23,10 @@ public class Reply {
         return id;
     }
 
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
     public String getTarget() {
         return target;
     }
