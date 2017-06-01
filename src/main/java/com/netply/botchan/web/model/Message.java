@@ -4,6 +4,7 @@ public class Message {
     private String id;
     private String message;
     private String sender;
+    private boolean isDirect = false;
 
 
     public Message() {
@@ -15,9 +16,14 @@ public class Message {
     }
 
     public Message(String id, String message, String sender) {
+        this(id, message, sender, false);
+    }
+
+    public Message(String id, String message, String sender, boolean isDirect) {
         this.id = id;
         this.message = message;
         this.sender = sender;
+        this.isDirect = isDirect;
     }
 
     public void setId(String id) {
@@ -38,6 +44,14 @@ public class Message {
 
     public String getSender() {
         return sender;
+    }
+
+    public void setDirect(boolean direct) {
+        isDirect = direct;
+    }
+
+    public boolean isDirect() {
+        return isDirect;
     }
 
     @Override
