@@ -50,7 +50,7 @@ public class Message {
         this.isDirect = isDirect;
     }
 
-    public boolean isDirect() {
+    public boolean getIsDirect() {
         return isDirect;
     }
 
