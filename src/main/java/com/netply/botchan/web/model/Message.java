@@ -46,8 +46,8 @@ public class Message {
         return sender;
     }
 
-    public void setDirect(boolean direct) {
-        isDirect = direct;
+    public void setIsDirect(boolean isDirect) {
+        this.isDirect = isDirect;
     }
 
     public boolean isDirect() {
