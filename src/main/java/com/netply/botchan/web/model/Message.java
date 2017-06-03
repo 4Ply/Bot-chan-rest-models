@@ -61,6 +61,7 @@ public class Message {
 
         Message message1 = (Message) o;
 
+        if (isDirect != message1.isDirect) return false;
         if (id != null ? !id.equals(message1.id) : message1.id != null) return false;
         if (message != null ? !message.equals(message1.message) : message1.message != null) return false;
         return sender != null ? sender.equals(message1.sender) : message1.sender == null;
@@ -71,6 +72,7 @@ public class Message {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (sender != null ? sender.hashCode() : 0);
+        result = 31 * result + (isDirect ? 1 : 0);
         return result;
     }
 
@@ -80,6 +82,7 @@ public class Message {
                 "id='" + id + '\'' +
                 ", message='" + message + '\'' +
                 ", sender='" + sender + '\'' +
+                ", isDirect=" + isDirect +
                 '}';
     }
 }
