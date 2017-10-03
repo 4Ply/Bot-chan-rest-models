@@ -5,7 +5,7 @@ public class Message {
     private String message;
     private String sender;
     private String platform;
-    private boolean isDirect = false;
+    private boolean isDirect;
 
 
     public Message() {
