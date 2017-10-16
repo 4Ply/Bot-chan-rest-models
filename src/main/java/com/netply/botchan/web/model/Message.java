@@ -4,7 +4,6 @@ public class Message {
     private int id;
     private String message;
     private String sender;
-    private String platform;
     private boolean isDirect;
 
 
@@ -12,18 +11,16 @@ public class Message {
 
     }
 
-    public Message(String message, String sender, String platform, boolean isDirect) {
+    public Message(String message, String sender, boolean isDirect) {
         this.message = message;
         this.sender = sender;
-        this.platform = platform;
         this.isDirect = isDirect;
     }
 
-    public Message(int id, String message, String sender, String platform, boolean isDirect) {
+    public Message(int id, String message, String sender, boolean isDirect) {
         this.id = id;
         this.message = message;
         this.sender = sender;
-        this.platform = platform;
         this.isDirect = isDirect;
     }
 
@@ -51,14 +48,6 @@ public class Message {
         this.sender = sender;
     }
 
-    public String getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(String platform) {
-        this.platform = platform;
-    }
-
     public boolean isDirect() {
         return isDirect;
     }
@@ -73,7 +62,6 @@ public class Message {
                 "id=" + id +
                 ", message='" + message + '\'' +
                 ", sender='" + sender + '\'' +
-                ", platform='" + platform + '\'' +
                 ", isDirect=" + isDirect +
                 '}';
     }
