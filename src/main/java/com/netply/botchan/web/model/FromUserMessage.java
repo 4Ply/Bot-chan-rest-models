@@ -4,24 +4,24 @@ public class FromUserMessage {
     private int id;
     private String message;
     private int platformID;
-    private boolean isDirect;
+    private boolean direct;
 
 
     public FromUserMessage() {
 
     }
 
-    public FromUserMessage(String message, int platformID, boolean isDirect) {
+    public FromUserMessage(String message, int platformID, boolean direct) {
         this.message = message;
         this.platformID = platformID;
-        this.isDirect = isDirect;
+        this.direct = direct;
     }
 
-    public FromUserMessage(int id, String message, int platformID, boolean isDirect) {
+    public FromUserMessage(int id, String message, int platformID, boolean direct) {
         this.id = id;
         this.message = message;
         this.platformID = platformID;
-        this.isDirect = isDirect;
+        this.direct = direct;
     }
 
     public int getId() {
@@ -49,11 +49,11 @@ public class FromUserMessage {
     }
 
     public boolean isDirect() {
-        return isDirect;
+        return direct;
     }
 
     public void setDirect(boolean direct) {
-        isDirect = direct;
+        this.direct = direct;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class FromUserMessage {
                 "id=" + id +
                 ", message='" + message + '\'' +
                 ", platformID=" + platformID +
-                ", isDirect=" + isDirect +
+                ", direct=" + direct +
                 '}';
     }
 }
