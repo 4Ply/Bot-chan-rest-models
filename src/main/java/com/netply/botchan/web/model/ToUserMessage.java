@@ -4,6 +4,8 @@ public class ToUserMessage {
     private int id;
     private String target;
     private String message;
+    private String originatingPlatform;
+    private String coreMessage;
 
 
     public ToUserMessage() {
@@ -14,6 +16,14 @@ public class ToUserMessage {
         this.id = id;
         this.target = target;
         this.message = message;
+    }
+
+    public ToUserMessage(int id, String target, String message, String originatingPlatform, String coreMessage) {
+        this.id = id;
+        this.target = target;
+        this.message = message;
+        this.originatingPlatform = originatingPlatform;
+        this.coreMessage = coreMessage;
     }
 
     public int getId() {
@@ -40,12 +50,22 @@ public class ToUserMessage {
         this.message = message;
     }
 
+    public String getOriginatingPlatform() {
+        return originatingPlatform;
+    }
+
+    public String getCoreMessage() {
+        return coreMessage;
+    }
+
     @Override
     public String toString() {
         return "ToUserMessage{" +
                 "id=" + id +
                 ", target='" + target + '\'' +
                 ", message='" + message + '\'' +
+                ", originatingPlatform='" + originatingPlatform + '\'' +
+                ", coreMessage='" + coreMessage + '\'' +
                 '}';
     }
 }
